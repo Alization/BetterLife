@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8>">
+    <title>Leg Exercises</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <!--<script type="text/javascript" src="photoLoop.js"></script>-->
+</head>
+
+<body>
+    <!-- menu bar -->
+    <div class="menu">
+        <a href="0_home.html"><img src="img/logo.png"></a>
+        <nav>
+            <a href="1_Workout.html">WORKOUTS</a>
+            <a href="1_Diet.html">DIET</a>
+            <a href="0_Home.html#aboutUs">ABOUT US</a>
+            <a href="1_login.html">LOGIN</a>
+        </nav>
+    </div>
+    <!-- menu bar End-->
+
+    <!-- Path -->
+    <ul class="path">
+        <li><a href="0_Home.html">Home</a></li>
+        <li><a href="1_Workout.html">Workouts</a></li>
+        <li><a href="2_leg.html">Legs</a></li>
+    </ul>
+
+    <!-- legs -->
+    <div class="page">
+        <div class="wrap2">
+            <h2>Legs</h2>
+        </div>
+        <div class="wrap2" id="leg-list">
+
+            <!-- Loop -->
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        const form1 = document.getElementById("leg-list");
+        window.addEventListener("load", (e) => {
+            e.preventDefault();
+            const request = new XMLHttpRequest();
+            request.open("post", "/2_leg");
+            request.onload = function () {    // Execute this function when the server responds.
+                const json = JSON.parse(request.response);
+                if (json.success) {
+                    //window.alert("Test Success");//json.message);
+                    form1.innerHTML = json.message;
+                } else {
+                    form1.innerHTML = "Something going wrong";   // Display an alert if something goes wrong.
+                    console.log(json.message);
+                }
+            }
+
+            var data = {
+                class: "leg"
+            }
+
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");   // Add headers to the request.
+            request.send(JSON.stringify(data));   // Send the request to the server along with data. Data contains information given by the user. 
+        })
+    </script>
+
+</body>
+
+</html>

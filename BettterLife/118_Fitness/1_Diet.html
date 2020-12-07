@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- Diet -->
+
+<html>
+
+<head>
+    <meta charset="utf-8>">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- menu bar -->
+    <div class="menu">
+        <a href="0_home.html"><img src="img/logo.png"></a>
+        <nav>
+            <a href="1_Workout.html">WORKOUTS</a>
+            <a href="1_Diet.html">DIET</a>
+            <a href="0_Home.html#aboutUs">ABOUT US</a>
+            <a href="1_login.html">LOGIN</a>
+        </nav>
+    </div>
+    <!-- menu bar End-->
+
+    <!-- Path -->
+    <ul class="path">
+        <li><a href="0_Home.html">Home</a></li>
+        <li><a href="1_Diet.html">Diet</a></li>
+    </ul>
+
+    <!-- Embedded Calorie Calculator -->
+    <div class="wrap">
+        <h2>Calorie Calculator</h2>
+    </div>
+
+    <div style="width:980px; height:700px; overflow:hidden; margin:auto; margin-top: 30px; ">
+        <div style="width:100%;height:800px;margin:-35px 0 0 0;">
+            <iframe src="https://www.niddk.nih.gov/bwp" width=100% height="700"></iframe>
+            <a href="https://www.niddk.nih.gov/bwp" style="color: #6C7A89; text-decoration: none;">
+                <p>This Calculator is power by NIDDK</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Food Nutrition Calculator-->
+    <div class="page">
+        <div class="wrap">
+            <h2>Food Nutrition Calculator</h2>
+        </div>
+
+        <div class="wrap3">
+            <div class="item">
+                <label for="vegetable">Vegetable:</label>
+                <select name="vegetable" id="vegetable">
+                    <option value=0> </option>
+                    <option value=50>Broccoli</option>
+                    <option value=7>Spinach</option>
+                    <option value=52>Carrot</option>
+                    <option value=16>Celery</option>
+                </select>
+
+                <label for="serving">Serving:</label>
+                <select name="serving" id="serving2">
+                    <option value=0> </option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="meats">Meat:</label>
+                <select name="meats" id="meats">
+                    <option value=0> </option>
+                    <option value=213>Beef</option>
+                    <option value=335>Chicken</option>
+                    <option value=206>Pork</option>
+                    <option value=336>Fish</option>
+                </select>
+                <label for="serving">Serving:</label>
+                <select name="serving" id="serving1">
+                    <option value=0> </option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="carbohydrate">Carbohydrate:</label>
+                <select name="carbohydrate" id="carbohydrate">
+                    <option value=0> </option>
+                    <option value=130>White Rice</option>
+                    <option value=111>Brown Rice</option>
+                    <option value=110>Potato</option>
+                </select>
+                <label for="serving">Serving:</label>
+                <select name="serving" id="serving3">
+                    <option value=0> </option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="fruits">Fruit:</label>
+                <select name="fruits" id="fruits">
+                    <option value=0></option>
+                    <option value=105>Banana</option>
+                    <option value=95>Apple</option>
+                    <option value=45>Orange</option>
+                    <option value=62>Grape</option>
+                </select>
+                <label for="serving">Serving:</label>
+                <select name="serving" id="serving4">
+                    <option value=0> </option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="wrap3">
+            <button onclick="finalcalculator()">Calculate</button>
+        </div>
+
+        <div class="wrap4">
+            <h3 id="result"></h3>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="footer">
+        &copy; copyright 2020 by BetterLife
+    </div>
+
+
+
+    <script>
+        function fcalculator() {
+            var m = document.getElementById('meats');
+            var mv = m.value;
+            var s1 = document.getElementById('serving1');
+            var sv1 = s1.value;
+            var mst = mv * sv1;
+            var v = document.getElementById('vegetable');
+            var vv = v.value;
+            var s2 = document.getElementById('serving2');
+            var sv2 = s2.value;
+            var vst = vv * sv2;
+            var c = document.getElementById('carbohydrate');
+            var cv = c.value;
+            var s3 = document.getElementById('serving3');
+            var sv3 = s3.value;
+            var cst = cv * sv3;
+            var f = document.getElementById('fruits');
+            var fv = f.value;
+            var s4 = document.getElementById('serving4');
+            var sv4 = s4.value;
+            var fst = fv * sv4;
+            return mst + vst + cst + fst;
+        }
+
+        function finalcalculator() {
+            document.getElementById("result").innerHTML = "Calories:" + fcalculator();
+        }
+    </script>
+</body>
+
+</html>

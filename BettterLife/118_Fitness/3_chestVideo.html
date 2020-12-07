@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8>">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- menu bar -->
+    <div class="menu">
+        <a href="0_home.html"><img src="img/logo.png"></a>
+        <nav>
+            <a href="1_Workout.html">WORKOUTS</a>
+            <a href="1_Diet.html">DIET</a>
+            <a href="0_Home.html#aboutUs">ABOUT US</a>
+            <a href="1_login.html">LOGIN</a>
+        </nav>
+    </div>
+    <!-- menu bar End-->
+
+    <!-- Path -->
+    <ul class="path">
+        <li><a href="0_Home.html">Home</a></li>
+        <li><a href="1_Workout.html">Workouts</a></li>
+        <li><a href="2_chest.html">Chest</a></li>
+    </ul>
+
+    <div class="page">
+        <div class="wrap2" id="chest-video">
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        const form1 = document.getElementById("chest-video");
+        window.addEventListener("load", (e) => {
+            e.preventDefault();
+            const request = new XMLHttpRequest();
+            request.open("post", "/3_chestVideo");
+            request.onload = function () {    // Execute this function when the server responds.
+                const json = JSON.parse(request.response);
+                if (json.success) {
+                    //window.alert("Test Success");//json.message);
+                    form1.innerHTML = json.message;
+                } else {
+                    form1.innerHTML = json.message;   // Display an alert if something goes wrong.
+                    console.log(json.message);
+                }
+            }
+
+            var n = location.search;
+            var m = n.slice(4);
+            var data = {
+                id: m
+            }
+
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");   // Add headers to the request.
+            request.send(JSON.stringify(data));   // Send the request to the server along with data. Data contains information given by the user. 
+        })
+    </script>
+
+
+</body>
+
+</html>

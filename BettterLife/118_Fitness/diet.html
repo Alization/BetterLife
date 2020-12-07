@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Diet -->
+
+<html>
+    <head>
+        <meta charset="utf-8>">
+        <title></title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- menu bar -->
+        <div class="menu">
+            <a href="0_home.html"><img src="img/logo.png"></a>
+            <nav>
+                <a href="1_Workout.html">WORKOUTS</a>
+                <a href="1_Diet.html">DIET</a>
+                <a href="0_Home.html#aboutUs">ABOUT US</a>
+                <a href="1_SignUp.html">LOGIN</a> 
+            </nav>
+        </div>
+        <!-- menu bar End-->
+
+         <!-- Path -->
+         <ul class="path">
+            <li><a href="0_Home.html">Home</a></li>
+            <li><a href="1_Diet.html">Diet</a></li>
+            <li><a href="#">Calorie Calculator</a></li>
+        </ul>
+
+        <!-- Embedded Calorie Calculator -->
+        <div class="wrap"><h2>Calorie Calculator</h2></div>
+
+        <div style="width:980px; height:700px; overflow:hidden; margin:auto; margin-top: 30px; ">
+            <div style="width:100%;height:800px;margin:-35px 0 0 0;">
+                <iframe src="https://www.niddk.nih.gov/bwp" width=100% height="700" ></iframe>
+                <!--<iframe src="https://www.niddk.nih.gov/bwp" frameborder="0" width=100% height="700" style="max-width: 100%"></iframe>-->
+                <a href="https://www.niddk.nih.gov/bwp" style="color: #6C7A89; text-decoration: none;">
+                    <p>This Calculator is power by NIDDK</p></a>
+            </div>
+        </div>
+       
+       <h3>_________________________________________________________________________________________________________________________________________________________________</h3>
+       <h3>_________________________________________________________________________________________________________________________________________________________________</h3>
+       
+       <!-- Food Nutrition Calculator-->
+       <h2>Food Nutrition Calculator</h2>
+
+          <div style="display:block;">
+            
+                <label for="meats">Meat:</label>
+                <select name="meats" id="meats">
+                    <option value=" "> </option>
+                  <option value="Beef">Beef</option> 
+                  <option value="Chicken">Chicken</option> 
+                  <option value="Pork">Pork</option>
+                  <option value="Fish">Fish</option>
+              </select>
+              <label for="serving">Serving:</label>
+                <select name="serving" id="serving">
+                    <option value=" "> </option>
+                  <option value="1">1</option> 
+                  <option value="2">2</option> 
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+             </select>
+            </div>
+            <br><br>
+         <div style="display:block;"></div>
+              <label for="vegetable">Vegetable:</label>
+              <select name="vegetable" id="vegetable">
+              <option value=" "> </option>
+              <option value="Spinach">Spinach</option>
+              <option value="Broccolli">Brocolli</option>
+              <option value="Lettuce">Lettuce</option>
+              <option value="Carrot">Carrot</option>
+              <option value="Cauliflower">Cauliflower</option>
+             </select>
+             <label for="serving">Serving:</label>
+                <select name="serving" id="serving">
+               <option value=" "> </option>
+                <option value="1">1</option> 
+              <option value="2">2</option> 
+              <option value="3">3</option>
+              <option value="4">4</option>
+             </select>
+        </div>
+        <br><br>
+        <div style="display:block;"></div>
+             <label for="carbohydrate">Carbohydrate:</label>
+            <select name="carbohydrate" id="carbohydrate">
+            <option value=" "> </option>
+            <option value="White Rice">White Rice</option>
+            <option value="Brown Rice">Brown Rice</option>
+            <option value="Potato">Potato</option>
+            </select>
+            <label for="serving">Serving:</label>
+              <select name="serving" id="serving">
+              <option value=" "> </option>
+              <option value="1">1</option> 
+              <option value="2">2</option> 
+              <option value="3">3</option>
+              <option value="4">4</option>
+             </select>
+        </div>
+        <br><br>
+        <div style="display:block;"></div>
+            <label for="fruits">Fruit:</label>
+           <select name="fruits" id="fruits">
+           <option value=" "></option>
+           <option value="banana">Banana</option>
+           <option value="apple">Apple</option>
+           <option value="orange">Orange</option>
+           <option value="garpe">Grape</option>
+        </select>
+        <label for="serving">Serving:</label>
+                <select name="serving" id="serving">
+                  <option value=" "> </option>
+                  <option value="1">1</option> 
+                  <option value="2">2</option> 
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+             </select>
+        </div>
+        <br><br>
+        <button type="button"> Calculate Calories</button>
+     
+    </body>
+</html>
